@@ -26,19 +26,3 @@ Route::get('/health', function () {
         'timestamp' => now()->toISOString()
     ]);
 });
-
-// Info del servicio
-Route::get('/info', function () {
-    return response()->json([
-        'service' => 'authors-service',
-        'description' => 'Microservicio para gestión de autores',
-        'version' => '1.0.0',
-        'endpoints' => [
-            'POST /api/authors' => 'Crear autor',
-            'GET /api/authors' => 'Listar autores',
-            'GET /api/authors/active' => 'Listar activos',
-            'GET /api/authors/{uuid}' => 'Obtener autor',
-            'GET /api/authors/{uuid}/exists' => 'Verificar existencia'
-        ]
-    ]);
-});
